@@ -5,6 +5,9 @@ module.exports = {
       fontFamily: {
         banner: ['BPG Banner Caps', 'sans-serif'],
       },
+      colors: {
+        background: '#232323',
+      },
     },
   },
   plugins: [],
