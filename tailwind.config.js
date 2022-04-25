@@ -1,7 +1,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        banner: ['BPG Banner Caps', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

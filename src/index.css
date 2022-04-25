@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BPG Banner Caps';
+  src: url('./assets/fonts/bpg-banner-caps/bpg_banner_caps.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #EAEAEA;
 }
