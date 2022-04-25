@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         banner: ['BPG Banner Caps', 'sans-serif'],
+        counter: ['Anonymous Pro', 'monospace'],
       },
       colors: {
         background: '#232323',
