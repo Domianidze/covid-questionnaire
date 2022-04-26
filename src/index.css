@@ -32,3 +32,21 @@ body {
   color: #232323;
   background-color: #EAEAEA;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a, button {
+  transition: .5s
+}
+
+a:hover, button:hover {
+  opacity: 0.8;
+}

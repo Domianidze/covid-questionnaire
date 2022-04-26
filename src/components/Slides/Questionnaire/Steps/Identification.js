@@ -24,7 +24,7 @@ const Identification = () => {
         </div>
       </form>
       <div>
-        <img src={img} alt='identification' className='shrink'></img>
+        <img src={img} alt='identification' className='h-150'></img>
       </div>
     </>
   );

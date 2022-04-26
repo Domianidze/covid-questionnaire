@@ -1,5 +1,8 @@
 // Steps
 import Identification from './Steps/Identification';
+import Covid from './Steps/Covid';
+import Vaccine from './Steps/Vaccine';
+import Tips from './Steps/Tips';
 
 // Nav
 import nextIcon from '../../../assets/img/nav/next.png';
@@ -23,7 +26,10 @@ const Questionnaire = () => {
       </div>
       {/* Main */}
       <div className='w-full flex justify-between'>
-        <Identification />
+        {/* <Identification /> */}
+        {/* <Covid /> */}
+        {/* <Vaccine /> */}
+        <Tips />
       </div>
       {/* Navigation */}
       <div className='py-10 w-full flex justify-center'>
