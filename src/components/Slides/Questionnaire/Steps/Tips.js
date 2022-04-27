@@ -1,9 +1,19 @@
+import { useContext } from 'react';
+import NavContext from 'store/nav-context';
+
 import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
 import TextArea from 'components/UI/TextArea';
 import Button from 'components/UI/Button';
 import img from 'assets/img/steps/tips.png';
 
 const Covid = () => {
+  const navCtx = useContext(NavContext);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navCtx.onNextSlide();
+  };
+
   return (
     <>
       <form>
@@ -52,7 +62,7 @@ const Covid = () => {
           id='environment-opinion'
         />
         <div className='w-full flex justify-end'>
-          <Button value='დასრულბა' />
+          <Button value='დასრულბა' onClick={submitHandler} />
         </div>
       </form>
       <div>

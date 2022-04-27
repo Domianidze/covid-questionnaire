@@ -57,9 +57,6 @@ const Vaccine = () => {
           name='vaccine–planning'
           required='true'
         />
-        {/* 
-            ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. 👉 რეგისტრაციის ბმული https://booking.moh.gov.ge/
-        */}
         <div className='pl-16 py-5 font-bold max-w-md'>
           <p>
             ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ

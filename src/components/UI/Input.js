@@ -8,7 +8,7 @@ const Input = (props) => {
       } max-w-xl flex flex-col`}
     >
       {props.label ? (
-        <label for={props.id} className='pb-3 text-xl font-bold'>{`${
+        <label htmlFor={props.id} className='pb-3 text-xl font-bold'>{`${
           props.label
         }${props.required ? '*' : ''}`}</label>
       ) : (
