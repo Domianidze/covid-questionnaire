@@ -11,6 +11,7 @@ module.exports = {
         background: '#232323',
       },
       spacing: {
+        130: '32.5rem',
         150: '37.5rem',
       },
     },

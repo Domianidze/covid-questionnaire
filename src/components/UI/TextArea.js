@@ -9,7 +9,7 @@ const TextArea = (props) => {
         name={props.id}
         placeholder={props.placeholder}
         value={props.value}
-        className='w-[625px] h-[185px] p-5 font-main text-lg text-background bg-transparent border border-background border-solid resize-none'
+        className='w-150 h-44 p-5 font-main text-lg text-background bg-transparent border border-background border-solid resize-none'
       ></textarea>
     </div>
   );
