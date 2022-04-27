@@ -1,7 +1,7 @@
-import CustomRadio from '../../../UI/CustomRadio/CustomRadio';
-import TextArea from '../../../UI/TextArea';
-import Button from '../../../UI/Button';
-import img from '../../../../assets/img/steps/tips.png';
+import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
+import TextArea from 'components/UI/TextArea';
+import Button from 'components/UI/Button';
+import img from 'assets/img/steps/tips.png';
 
 const Covid = () => {
   return (

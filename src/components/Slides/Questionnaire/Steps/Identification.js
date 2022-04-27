@@ -1,5 +1,5 @@
-import Input from '../../../UI/Input';
-import img from '../../../../assets/img/steps/identification.png';
+import Input from 'components/UI/Input';
+import img from 'assets/img/steps/identification.png';
 
 const Identification = () => {
   return (

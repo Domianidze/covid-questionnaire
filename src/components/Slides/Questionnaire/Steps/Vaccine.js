@@ -1,5 +1,5 @@
-import CustomRadio from '../../../UI/CustomRadio/CustomRadio';
-import img from '../../../../assets/img/steps/vaccine.png';
+import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
+import img from 'assets/img/steps/vaccine.png';
 
 const Vaccine = () => {
   return (

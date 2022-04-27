@@ -5,11 +5,11 @@ import Vaccine from './Steps/Vaccine';
 import Tips from './Steps/Tips';
 
 // Nav
-import nextIcon from '../../../assets/img/nav/next.png';
-import nextLockedIcon from '../../../assets/img/nav/next-locked.png';
-import prevIcon from '../../../assets/img/nav/prev.png';
+import nextIcon from 'assets/img/nav/next.png';
+import nextLockedIcon from 'assets/img/nav/next-locked.png';
+import prevIcon from 'assets/img/nav/prev.png';
 
-import HeaderLogo from '../../../assets/img/header-logo.png';
+import HeaderLogo from 'assets/img/header-logo.png';
 
 const Questionnaire = () => {
   return (

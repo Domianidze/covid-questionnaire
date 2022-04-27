@@ -1,7 +1,7 @@
 // Slides
-import Start from './components/Slides/Start';
-import Questionnaire from './components/Slides/Questionnaire/Questionnaire';
-import End from './components/Slides/End';
+import Start from 'components/Slides/Start';
+import Questionnaire from 'components/Slides/Questionnaire/Questionnaire';
+import End from 'components/Slides/End';
 
 function App() {
   return (
