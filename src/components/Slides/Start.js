@@ -1,21 +1,17 @@
-import { useContext } from 'react';
-import NavContext from 'store/nav-context';
+import { Link } from 'react-router-dom';
 
 import logo from 'assets/img/logo.png';
 
 const Start = () => {
-  const navCtx = useContext(NavContext);
-
   return (
     <>
       <img src={logo} alt='logo'></img>
-      <button
-        type='button'
-        className='mt-24 font-banner text-3xl max-w-[175px]'
-        onClick={navCtx.onNextSlide}
+      <Link
+        to='/questionnaire'
+        className='mt-24 max-w-xxs font-banner text-3xl text-center'
       >
         კითხვარის დაწყება
-      </button>
+      </Link>
     </>
   );
 };

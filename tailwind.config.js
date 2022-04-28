@@ -2,6 +2,13 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      spacing: {
+        130: '32.5rem',
+        150: '37.5rem',
+      },
+      maxWidth: {
+        xxs: '10rem',
+      },
       fontFamily: {
         banner: ['BPG Banner Caps', 'sans-serif'],
         counter: ['Anonymous Pro', 'monospace'],
@@ -9,10 +16,6 @@ module.exports = {
       },
       colors: {
         background: '#232323',
-      },
-      spacing: {
-        130: '32.5rem',
-        150: '37.5rem',
       },
     },
   },

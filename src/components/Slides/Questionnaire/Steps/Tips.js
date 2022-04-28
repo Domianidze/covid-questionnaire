@@ -1,17 +1,17 @@
-import { useContext } from 'react';
-import NavContext from 'store/nav-context';
+import { useNavigate } from 'react-router-dom';
 
 import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
 import TextArea from 'components/UI/TextArea';
 import Button from 'components/UI/Button';
 import img from 'assets/img/steps/tips.png';
 
-const Covid = () => {
-  const navCtx = useContext(NavContext);
+const Tips = () => {
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navCtx.onNextSlide();
+    navigate('/end');
+    console.log('Subbmited');
   };
 
   return (
@@ -72,4 +72,4 @@ const Covid = () => {
   );
 };
 
-export default Covid;
+export default Tips;
