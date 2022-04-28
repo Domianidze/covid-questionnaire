@@ -24,7 +24,7 @@ const Questionnaire = () => {
         {/* Info */}
         <div className='w-full flex justify-between items-center'>
           <img src={HeaderLogo} alt='header logo'></img>
-          <p className='font-counter text-4xl'>1/4</p>
+          <p className='font-counter text-4xl'>{curStep + 1}/4</p>
         </div>
         {/* Line */}
         <div className='my-3 w-full h-[2px] bg-background'></div>
