@@ -1,4 +1,4 @@
-import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
+import { CustomRadio } from 'components';
 import img from 'assets/img/steps/vaccine.png';
 
 const Vaccine = () => {

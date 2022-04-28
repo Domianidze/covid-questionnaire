@@ -1,15 +1,15 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-// Slides
-import Start from 'components/Slides/Start';
-import Questionnaire from 'components/Slides/Questionnaire/Questionnaire';
-import End from 'components/Slides/End';
-
-// Steps
-import Identification from 'components/Slides/Questionnaire/Steps/Identification';
-import Covid from 'components/Slides/Questionnaire/Steps/Covid';
-import Vaccine from 'components/Slides/Questionnaire/Steps/Vaccine';
-import Tips from 'components/Slides/Questionnaire/Steps/Tips';
+// Pages/Steps
+import {
+  Start,
+  Questionnaire,
+  Identification,
+  Covid,
+  Vaccine,
+  Tips,
+  End,
+} from 'pages';
 
 function App() {
   return (

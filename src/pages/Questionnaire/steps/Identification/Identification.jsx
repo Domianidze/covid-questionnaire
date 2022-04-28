@@ -1,4 +1,4 @@
-import Input from 'components/UI/Input';
+import { Input } from 'components';
 import img from 'assets/img/steps/identification.png';
 
 const Identification = () => {

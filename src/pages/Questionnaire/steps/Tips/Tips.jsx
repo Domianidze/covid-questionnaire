@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
-import TextArea from 'components/UI/TextArea';
-import Button from 'components/UI/Button';
+import { CustomRadio, TextArea, Button } from 'components';
 import img from 'assets/img/steps/tips.png';
 
 const Tips = () => {

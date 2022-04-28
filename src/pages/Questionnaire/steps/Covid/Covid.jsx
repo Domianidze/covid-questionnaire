@@ -1,5 +1,4 @@
-import CustomRadio from 'components/UI/CustomRadio/CustomRadio';
-import Input from 'components/UI/Input';
+import { CustomRadio, Input } from 'components';
 import img from 'assets/img/steps/covid.png';
 
 const Covid = () => {
