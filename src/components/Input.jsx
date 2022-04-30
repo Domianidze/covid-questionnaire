@@ -17,7 +17,7 @@ const Input = (props) => {
       <input
         type={props.type}
         id={props.id}
-        name={props.id}
+        {...props.register}
         placeholder={props.placeholder}
         value={props.value}
         className={inputClasses}
@@ -26,7 +26,7 @@ const Input = (props) => {
         <p
           className={`absolute ${
             props.label ? 'bottom-[-5px] pl-5' : 'bottom-[-10px] pl-10'
-          } text-[15px] text-[#F15524]`}
+          } text-[15px] text-[#F15524] whitespace-nowrap`}
         >
           {props.error}
         </p>

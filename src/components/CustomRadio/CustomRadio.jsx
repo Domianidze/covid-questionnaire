@@ -12,7 +12,7 @@ const CustomRadio = (props) => {
             <input
               type='radio'
               id={radio.id}
-              name={props.name}
+              {...props.register}
               value={radio.id}
               className={classes['custom-radio']}
             ></input>

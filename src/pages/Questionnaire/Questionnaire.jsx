@@ -1,13 +1,27 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 // Nav
 import nextIcon from 'assets/img/nav/next.png';
-import nextLockedIcon from 'assets/img/nav/next-locked.png';
 import prevIcon from 'assets/img/nav/prev.png';
 
 import HeaderLogo from 'assets/img/header-logo.png';
 
 const Questionnaire = () => {
+  const [submittingError, setSubmittingError] = useState(false);
+
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid, submitCount, isSubmitSuccessful },
+    watch,
+  } = useForm({
+    mode: 'onTouched',
+  });
+
   const steps = [
     '/questionnaire/identification',
     '/questionnaire/covid',
@@ -16,6 +30,34 @@ const Questionnaire = () => {
   ];
   const pathname = useLocation().pathname;
   const curStep = steps.findIndex((step) => pathname === step);
+
+  const saveDataHandler = (data) => {
+    console.log(data);
+    if (curStep < steps.length - 1) {
+      navigate(steps[curStep + 1]);
+    } else if (curStep === steps.length - 1) {
+      navigate('/end');
+    }
+  };
+
+  const bindedHandleSubmit = handleSubmit.bind(null, saveDataHandler);
+
+  useEffect(() => {
+    if (!isSubmitSuccessful && submitCount > 0) {
+      setSubmittingError(true);
+      setTimeout(() => {
+        setSubmittingError(false);
+      }, 2000);
+    }
+  }, [isSubmitSuccessful, submitCount]);
+
+  let nextBtnClassName;
+
+  if (curStep >= steps.length - 1) {
+    nextBtnClassName = 'pointer-events-none opacity-0';
+  } else if (!isValid) {
+    nextBtnClassName = 'opacity-50 hover:opacity-50';
+  }
 
   return (
     <div className='py-24 px-48 w-full min-h-full flex flex-col justify-between'>
@@ -31,7 +73,9 @@ const Questionnaire = () => {
       </div>
       {/* Main */}
       <div className='w-full flex justify-between'>
-        <Outlet />
+        <Outlet
+          context={{ register, errors, isValid, watch, bindedHandleSubmit }}
+        />
       </div>
       {/* Navigation */}
       <div className='py-10 w-full flex justify-center'>
@@ -42,14 +86,21 @@ const Questionnaire = () => {
           >
             <img src={prevIcon} alt='previous icon'></img>
           </Link>
-          <Link
-            to={curStep < steps.length - 1 && steps[curStep + 1]}
-            className={
-              curStep >= steps.length - 1 ? 'pointer-events-none opacity-0' : ''
-            }
-          >
-            <img src={nextIcon} alt='next icon'></img>
-          </Link>
+          <div className='relative'>
+            <p
+              className={`absolute top-[-30px] -translate-x-[40%] font-bold opacity-0 whitespace-nowrap duration-200 ${
+                submittingError && 'opacity-50'
+              }`}
+            >
+              ჯერ შეავშე {'<'}3
+            </p>
+            <button
+              className={nextBtnClassName}
+              onClick={handleSubmit(saveDataHandler)}
+            >
+              <img src={nextIcon} alt='next icon'></img>
+            </button>
+          </div>
         </div>
       </div>
     </div>

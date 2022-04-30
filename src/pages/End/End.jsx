@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 const End = () => {
+  useEffect(() => {
+    console.log('Submitted');
+  }, []);
+
   return (
     <div className='w-full h-full flex justify-center items-center bg-background'>
       <p className='font-banner text-7xl text-white tracking-[.20em]'>

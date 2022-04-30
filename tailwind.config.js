@@ -7,7 +7,7 @@ module.exports = {
         150: '37.5rem',
       },
       maxWidth: {
-        xxs: '10rem',
+        xxs: '12rem',
       },
       fontFamily: {
         banner: ['BPG Banner Caps', 'sans-serif'],

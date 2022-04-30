@@ -1,15 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
 import { CustomRadio, TextArea, Button } from 'components';
 import img from 'assets/img/steps/tips.png';
 
 const Tips = () => {
-  const navigate = useNavigate();
+  const { register, errors, isValid, bindedHandleSubmit } = useOutletContext();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate('/end');
-    console.log('Subbmited');
+    bindedHandleSubmit()();
   };
 
   return (
@@ -35,8 +34,13 @@ const Tips = () => {
             { label: 'ორ კვირაში ერთხელ', id: 'two-weeks-once' },
             { label: 'თვეში ერთხელ', id: 'month-once' },
           ]}
-          name='meeting-amount'
-          required={true}
+          register={{
+            ...register('meeting-amount', {
+              required: 'ველი სავალდებულოა',
+            }),
+          }}
+          required='true'
+          error={errors['meeting-amount']?.message}
         />
         <CustomRadio
           question='კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?'
@@ -48,8 +52,13 @@ const Tips = () => {
             { label: '4', id: '4' },
             { label: '5', id: '5' },
           ]}
-          name='working-office-amount'
-          required={true}
+          register={{
+            ...register('working-office-amount', {
+              required: 'ველი სავალდებულოა',
+            }),
+          }}
+          required='true'
+          error={errors['working-office-amount']?.message}
         />
         <TextArea
           question='რას ფიქრობ ფიზიკურ შეკრებებზე?'
@@ -60,11 +69,15 @@ const Tips = () => {
           id='environment-opinion'
         />
         <div className='w-full flex justify-end'>
-          <Button value='დასრულბა' onClick={submitHandler} />
+          <Button
+            value='დასრულბა'
+            onClick={submitHandler}
+            className={!isValid && 'opacity-50 hover:opacity-40'}
+          />
         </div>
       </form>
       <div>
-        <img src={img} alt='tips' className='h-150'></img>
+        <img src={img} alt='tips' className='max-h-150'></img>
       </div>
     </>
   );
