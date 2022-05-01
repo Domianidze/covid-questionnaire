@@ -45,7 +45,7 @@ const Covid = () => {
         ) : (
           ''
         )}
-        {antibodies === 'antibodies-yes' ? (
+        {covidContact === 'coivd-yes' && antibodies === 'antibodies-yes' ? (
           <div className='py-5'>
             <p className='py-2 max-w-lg text-xl font-bold'>
               თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებით რიცხვი და
@@ -69,7 +69,7 @@ const Covid = () => {
         ) : (
           ''
         )}
-        {antibodies === 'antibodies-no' ? (
+        {covidContact === 'covid-yes' && antibodies === 'antibodies-no' ? (
           <div className='py-5'>
             <p className='py-2 max-w-lg text-xl font-bold'>
               მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*

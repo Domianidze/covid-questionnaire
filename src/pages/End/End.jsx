@@ -4,12 +4,12 @@ import DataContext from 'state/data-context';
 
 const End = () => {
   const dataCtx = useContext(DataContext);
-  const data = dataCtx.data;
 
   useEffect(() => {
-    console.log(data);
+    console.log(dataCtx.data);
     console.log('Submitted');
-  }, [data]);
+    localStorage.clear();
+  }, [dataCtx]);
 
   return (
     <div className='w-full h-full flex justify-center items-center bg-background'>

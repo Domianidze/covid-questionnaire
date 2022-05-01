@@ -22,6 +22,7 @@ const Questionnaire = () => {
     handleSubmit,
     formState: { errors, isValid, submitCount, isSubmitSuccessful },
     watch,
+    setValue,
   } = useForm({
     mode: 'onTouched',
   });
@@ -45,6 +46,12 @@ const Questionnaire = () => {
   };
 
   const bindedHandleSubmit = handleSubmit.bind(null, saveDataHandler);
+
+  useEffect(() => {
+    Object.entries(dataCtx.data).forEach((field) => {
+      setValue(field[0], field[1]);
+    });
+  }, [dataCtx.data, setValue]);
 
   useEffect(() => {
     if (!isSubmitSuccessful && submitCount > 0) {
