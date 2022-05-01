@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+
+import DataContext from 'state/data-context';
 
 // Nav
 import nextIcon from 'assets/img/nav/next.png';
@@ -9,6 +11,8 @@ import prevIcon from 'assets/img/nav/prev.png';
 import HeaderLogo from 'assets/img/header-logo.png';
 
 const Questionnaire = () => {
+  const dataCtx = useContext(DataContext);
+
   const [submittingError, setSubmittingError] = useState(false);
 
   const navigate = useNavigate();
@@ -32,7 +36,7 @@ const Questionnaire = () => {
   const curStep = steps.findIndex((step) => pathname === step);
 
   const saveDataHandler = (data) => {
-    console.log(data);
+    dataCtx.saveData(data);
     if (curStep < steps.length - 1) {
       navigate(steps[curStep + 1]);
     } else if (curStep === steps.length - 1) {
@@ -89,7 +93,7 @@ const Questionnaire = () => {
           <div className='relative'>
             <p
               className={`absolute top-[-30px] -translate-x-[40%] font-bold opacity-0 whitespace-nowrap duration-200 ${
-                submittingError && 'opacity-50'
+                curStep !== steps.length - 1 && submittingError && 'opacity-50'
               }`}
             >
               ჯერ შეავშე {'<'}3

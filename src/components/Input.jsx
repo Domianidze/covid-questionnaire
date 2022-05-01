@@ -19,7 +19,7 @@ const Input = (props) => {
         id={props.id}
         {...props.register}
         placeholder={props.placeholder}
-        value={props.value}
+        defaultValue={props.value}
         className={inputClasses}
       />
       {props.error && (
