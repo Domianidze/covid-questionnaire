@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import logo from 'assets/img/logo.png';
 
-const Start = () => {
+const Start = (props) => {
   return (
     <>
       <img src={logo} alt='logo'></img>
@@ -10,7 +10,7 @@ const Start = () => {
         to='/questionnaire'
         className='mt-24 max-w-xxs font-banner text-3xl text-center'
       >
-        კითხვარის დაწყება
+        კითხვარის {props.data?.firstname ? 'გაგრძელება' : 'დაწყება'}
       </Link>
     </>
   );

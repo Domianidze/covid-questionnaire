@@ -1,15 +1,24 @@
 import { useEffect, useContext } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 import DataContext from 'state/data-context';
 
 const End = () => {
   const dataCtx = useContext(DataContext);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    console.log(dataCtx.data);
-    console.log('Submitted');
-    localStorage.clear();
-  }, [dataCtx]);
+    if (!dataCtx.data['meeting-amount']) {
+      navigate('/questionnaire');
+      return;
+    } else {
+      console.log(dataCtx.data);
+      console.log('Submitted');
+      localStorage.clear();
+    }
+  }, [dataCtx, navigate]);
 
   return (
     <div className='w-full h-full flex justify-center items-center bg-background'>
