@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { CustomRadio, Input } from 'components';
+import { CustomRadio, Input, DateInput } from 'components';
 import img from 'assets/img/steps/covid.png';
 
 const Covid = () => {
@@ -74,7 +74,7 @@ const Covid = () => {
             <p className='py-2 max-w-lg text-xl font-bold'>
               მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*
             </p>
-            <Input
+            <DateInput
               type='text'
               id='covid-date'
               register={{

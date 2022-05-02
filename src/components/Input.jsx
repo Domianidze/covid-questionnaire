@@ -1,5 +1,5 @@
 const Input = (props) => {
-  const inputClasses = `${props.className} max-w-130 h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background'`;
+  const inputClasses = `${props.className} max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background'`;
 
   return (
     <div
