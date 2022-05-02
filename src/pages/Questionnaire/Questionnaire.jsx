@@ -71,7 +71,7 @@ const Questionnaire = () => {
   }
 
   return (
-    <div className='py-24 px-48 w-full min-h-full flex flex-col justify-between'>
+    <div className='py-5 px-5 w-full min-h-full flex flex-col justify-between 2xl:py-20 2xl:px-0 2xl:w-375'>
       {/* Header */}
       <div className='w-full flex flex-col'>
         {/* Info */}
@@ -83,7 +83,7 @@ const Questionnaire = () => {
         <div className='my-3 w-full h-[2px] bg-background'></div>
       </div>
       {/* Main */}
-      <div className='w-full flex justify-between'>
+      <div className='w-full h-auto flex justify-between'>
         <Outlet
           context={{ register, errors, isValid, watch, bindedHandleSubmit }}
         />

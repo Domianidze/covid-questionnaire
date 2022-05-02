@@ -33,9 +33,9 @@
 .custom-radio:not(:checked) + label:after {
     content: '';
     position: absolute;
-    top: 3.5px;
+    top: .25rem;
+    left: .25rem;
     width: 14px;
-    left: 3.5px;
     height: 14px;
     background: #232323;
     border-radius: 100%;

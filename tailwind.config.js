@@ -5,9 +5,13 @@ module.exports = {
       spacing: {
         130: '32.5rem',
         150: '37.5rem',
+        375: '93.75rem',
       },
       maxWidth: {
         xxs: '12rem',
+      },
+      minHeight: {
+        '4/5': '80%',
       },
       fontFamily: {
         banner: ['BPG Banner Caps', 'sans-serif'],

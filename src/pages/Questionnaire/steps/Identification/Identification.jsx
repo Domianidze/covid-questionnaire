@@ -17,7 +17,7 @@ const Identification = () => {
 
   return (
     <>
-      <form>
+      <form className='w-1/2 pr-5'>
         <Input
           type='text'
           id='firstname'
@@ -90,8 +90,8 @@ const Identification = () => {
           </p>
         </div>
       </form>
-      <div>
-        <img src={img} alt='identification' className='max-h-150'></img>
+      <div className='w-1/2 pl-5'>
+        <img src={img} alt='identification' className='pt-3 max-h-150'></img>
       </div>
     </>
   );

@@ -11,7 +11,7 @@ const Covid = () => {
 
   return (
     <>
-      <form>
+      <form className='w-1/2 pr-5'>
         <CustomRadio
           question='გაქვს გადატანილი Covid-19?'
           radios={[
@@ -45,7 +45,7 @@ const Covid = () => {
         ) : (
           ''
         )}
-        {covidContact === 'coivd-yes' && antibodies === 'antibodies-yes' ? (
+        {covidContact === 'covid-yes' && antibodies === 'antibodies-yes' ? (
           <div className='py-5'>
             <p className='py-2 max-w-lg text-xl font-bold'>
               თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებით რიცხვი და
@@ -96,8 +96,8 @@ const Covid = () => {
           ''
         )}
       </form>
-      <div>
-        <img src={img} alt='covid' className='max-h-150'></img>
+      <div className='w-1/2 pl-5'>
+        <img src={img} alt='covid' className='pt-3 max-h-150'></img>
       </div>
     </>
   );

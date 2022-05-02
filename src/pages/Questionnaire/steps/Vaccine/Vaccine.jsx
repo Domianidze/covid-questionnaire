@@ -12,7 +12,7 @@ const Vaccine = () => {
 
   return (
     <>
-      <form>
+      <form className='w-1/2 pr-5'>
         <CustomRadio
           question='უკვე აცრილი ხარ?'
           radios={[
@@ -115,8 +115,8 @@ const Vaccine = () => {
           ''
         )}
       </form>
-      <div>
-        <img src={img} alt='vaccine' className='max-h-150'></img>
+      <div className='w-1/2 pl-5'>
+        <img src={img} alt='vaccine' className='pt-3 max-h-150'></img>
       </div>
     </>
   );

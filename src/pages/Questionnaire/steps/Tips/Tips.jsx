@@ -13,7 +13,7 @@ const Tips = () => {
 
   return (
     <>
-      <form>
+      <form className='w-1/2 pr-5'>
         <div className='max-w-xl py-5 text-xl'>
           <p>
             რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
@@ -76,8 +76,8 @@ const Tips = () => {
           />
         </div>
       </form>
-      <div>
-        <img src={img} alt='tips' className='max-h-150'></img>
+      <div className='w-1/2 pl-5'>
+        <img src={img} alt='tips' className='pt-3 max-h-150'></img>
       </div>
     </>
   );
