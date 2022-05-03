@@ -1,9 +1,11 @@
-import { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import DataContext from 'state/data-context';
 
 import { AnimatePresence } from 'framer-motion';
 
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+
+import Helmet from 'react-helmet';
 
 // Pages/Steps
 import {
@@ -39,6 +41,9 @@ function App() {
 
   return (
     <div className='App'>
+      <Helmet>
+        <title>Redberry - Covid Questionnaire</title>
+      </Helmet>
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
           <Route
