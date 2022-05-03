@@ -8,7 +8,7 @@ module.exports = {
         375: '93.75rem',
       },
       maxWidth: {
-        xxs: '12rem',
+        xxs: '12.5rem',
         s: '32.5rem',
       },
       minHeight: {

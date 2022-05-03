@@ -1,6 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { CustomRadio, Input, DateInput } from 'components';
+import { AnimatedDiv, CustomRadio, Input, DateInput } from 'components';
+
 import img from 'assets/img/steps/covid.png';
 
 const Covid = () => {
@@ -10,7 +11,7 @@ const Covid = () => {
   const antibodies = watch('antibodies');
 
   return (
-    <>
+    <AnimatedDiv className='w-full h-auto flex justify-between'>
       <form className='w-1/2 pr-5'>
         <CustomRadio
           question='გაქვს გადატანილი Covid-19?'
@@ -46,7 +47,7 @@ const Covid = () => {
           ''
         )}
         {covidContact === 'covid-yes' && antibodies === 'antibodies-yes' ? (
-          <div className='py-5'>
+          <AnimatedDiv className='py-5'>
             <p className='py-2 max-w-lg text-xl font-bold'>
               თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებით რიცხვი და
               ანტისხეულების რაოდენობა
@@ -65,12 +66,12 @@ const Covid = () => {
               placeholder='ანტისხეულების რაოდენობა'
               className='ml-5'
             />
-          </div>
+          </AnimatedDiv>
         ) : (
           ''
         )}
         {covidContact === 'covid-yes' && antibodies === 'antibodies-no' ? (
-          <div className='py-5'>
+          <AnimatedDiv className='py-5'>
             <p className='py-2 max-w-lg text-xl font-bold'>
               მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*
             </p>
@@ -91,7 +92,7 @@ const Covid = () => {
               error={errors['covid-date']?.message}
               className='ml-5'
             />
-          </div>
+          </AnimatedDiv>
         ) : (
           ''
         )}
@@ -99,7 +100,7 @@ const Covid = () => {
       <div className='w-1/2 pl-5'>
         <img src={img} alt='covid' className='pt-3 max-h-150'></img>
       </div>
-    </>
+    </AnimatedDiv>
   );
 };
 

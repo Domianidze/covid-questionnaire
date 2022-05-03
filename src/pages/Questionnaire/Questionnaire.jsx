@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 
 import DataContext from 'state/data-context';
 
+import { QUESTIONNAIRE_STEPS } from 'config';
+
 // Nav
 import nextIcon from 'assets/img/nav/next.png';
 import prevIcon from 'assets/img/nav/prev.png';
@@ -27,12 +29,8 @@ const Questionnaire = () => {
     mode: 'onTouched',
   });
 
-  const steps = [
-    '/questionnaire/identification',
-    '/questionnaire/covid',
-    '/questionnaire/vaccine',
-    '/questionnaire/tips',
-  ];
+  // Get curstep using pathname
+  const steps = QUESTIONNAIRE_STEPS;
   const pathname = useLocation().pathname;
   const curStep = steps.findIndex((step) => pathname === step);
 
@@ -71,7 +69,7 @@ const Questionnaire = () => {
   }
 
   return (
-    <div className='py-5 px-5 w-full min-h-full flex flex-col justify-between 2xl:py-20 2xl:px-0 2xl:w-375'>
+    <div className='py-5 px-5 mx-auto w-full min-h-screen flex flex-col justify-between 2xl:py-20 2xl:px-0 2xl:w-375'>
       {/* Header */}
       <div className='w-full flex flex-col'>
         {/* Info */}
@@ -83,11 +81,9 @@ const Questionnaire = () => {
         <div className='my-3 w-full h-[2px] bg-background'></div>
       </div>
       {/* Main */}
-      <div className='w-full h-auto flex justify-between'>
-        <Outlet
-          context={{ register, errors, isValid, watch, bindedHandleSubmit }}
-        />
-      </div>
+      <Outlet
+        context={{ register, errors, isValid, watch, bindedHandleSubmit }}
+      />
       {/* Navigation */}
       <div className='py-10 w-full flex justify-center'>
         <div className='w-36 flex justify-between'>

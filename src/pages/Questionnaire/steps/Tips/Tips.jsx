@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { CustomRadio, TextArea, Button } from 'components';
+import { AnimatedDiv, CustomRadio, TextArea, Button } from 'components';
 import img from 'assets/img/steps/tips.png';
 
 const Tips = () => {
@@ -12,7 +12,7 @@ const Tips = () => {
   };
 
   return (
-    <>
+    <AnimatedDiv className='w-full h-auto flex justify-between'>
       <form className='w-1/2 pr-5'>
         <div className='max-w-xl py-5 text-xl'>
           <p>
@@ -79,7 +79,7 @@ const Tips = () => {
       <div className='w-1/2 pl-5'>
         <img src={img} alt='tips' className='pt-3 max-h-150'></img>
       </div>
-    </>
+    </AnimatedDiv>
   );
 };
 

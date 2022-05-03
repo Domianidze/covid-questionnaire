@@ -1,8 +1,10 @@
 import classes from './CustomRadio.module.css';
 
+import { AnimatedDiv } from 'components';
+
 const CustomRadio = (props) => {
   return (
-    <div className='relative py-5 flex flex-col'>
+    <AnimatedDiv className='relative py-5 flex flex-col'>
       <p className='py-2 max-w-xl text-xl font-bold'>{`${props.question}${
         props.required ? '*' : ''
       }`}</p>
@@ -21,11 +23,13 @@ const CustomRadio = (props) => {
         );
       })}
       {props.error && (
-        <p className='absolute bottom-[-5px] pl-5 text-[15px] text-[#F15524]'>
-          {props.error}
-        </p>
+        <AnimatedDiv>
+          <p className='absolute bottom-[-5px] pl-5 text-[15px] text-[#F15524]'>
+            {props.error}
+          </p>
+        </AnimatedDiv>
       )}
-    </div>
+    </AnimatedDiv>
   );
 };
 

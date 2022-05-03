@@ -1,3 +1,5 @@
+import { AnimatedDiv } from 'components';
+
 const TextArea = (props) => {
   return (
     <div className='py-5 flex flex-col'>
@@ -11,6 +13,13 @@ const TextArea = (props) => {
         value={props.value}
         className='w-150 h-44 p-5 font-main text-lg text-background bg-transparent border border-background border-solid resize-none'
       ></textarea>
+      {props.error && (
+        <AnimatedDiv>
+          <p className='absolute bottom-[-5px] pl-5 text-[15px] text-[#F15524]'>
+            {props.error}
+          </p>
+        </AnimatedDiv>
+      )}
     </div>
   );
 };

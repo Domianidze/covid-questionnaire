@@ -1,6 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { Input } from 'components';
+import { AnimatedDiv, Input } from 'components';
+
 import img from 'assets/img/steps/identification.png';
 
 const Identification = () => {
@@ -16,7 +17,7 @@ const Identification = () => {
   }
 
   return (
-    <>
+    <AnimatedDiv className='w-full h-auto flex justify-between'>
       <form className='w-1/2 pr-5'>
         <Input
           type='text'
@@ -93,7 +94,7 @@ const Identification = () => {
       <div className='w-1/2 pl-5'>
         <img src={img} alt='identification' className='pt-3 max-h-150'></img>
       </div>
-    </>
+    </AnimatedDiv>
   );
 };
 

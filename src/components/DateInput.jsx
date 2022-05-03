@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { AnimatedDiv } from 'components';
+
 const DateInput = (props) => {
   const [enteredDate, setEnteredDate] = useState('');
 
@@ -70,13 +72,15 @@ const DateInput = (props) => {
         className='ml-5 max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background'
       />
       {props.error && (
-        <p
-          className={`absolute ${
-            props.label ? 'bottom-[-5px] pl-5' : 'bottom-[-10px] pl-10'
-          } text-[15px] text-[#F15524] whitespace-nowrap`}
-        >
-          {props.error}
-        </p>
+        <AnimatedDiv>
+          <p
+            className={`absolute ${
+              props.label ? 'bottom-[-5px] pl-5' : 'bottom-[-10px] pl-10'
+            } text-[15px] text-[#F15524] whitespace-nowrap`}
+          >
+            {props.error}
+          </p>
+        </AnimatedDiv>
       )}
     </div>
   );

@@ -1,7 +1,9 @@
 import { useContext } from 'react';
 import DataContext from 'state/data-context';
 
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 // Pages/Steps
 import {
@@ -18,8 +20,8 @@ function App() {
   let data = JSON.parse(localStorage.getItem('data'));
   const { data: contextData } = useContext(DataContext);
 
-  if (!data) data = {};
   if (Object.keys(contextData).length > 0) data = contextData;
+  if (!data) data = {};
 
   let lastAccessibleStep;
 
@@ -33,12 +35,18 @@ function App() {
     lastAccessibleStep = 'identification';
   }
 
+  const location = useLocation();
+
   return (
     <div className='App'>
-      {/* Wrapper */}
-      <div className='w-full h-screen flex justify-center items-center flex-col'>
-        <Routes>
-          <Route path='/start' element={<Start data={data} />} />
+      <AnimatePresence exitBeforeEnter>
+        <Routes key={location.pathname} location={location}>
+          <Route
+            path='/start'
+            element={
+              <Start data={data} lastAccessibleStep={lastAccessibleStep} />
+            }
+          />
           <Route path='/questionnaire' element={<Questionnaire />}>
             <Route path='identification' element={<Identification />} />
             {data?.firstname && <Route path='covid' element={<Covid />} />}
@@ -55,7 +63,7 @@ function App() {
           <Route path='/end' element={<End />} />
           <Route path='*' element={<Navigate to='/start' />} />
         </Routes>
-      </div>
+      </AnimatePresence>
     </div>
   );
 }

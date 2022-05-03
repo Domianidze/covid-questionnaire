@@ -1,6 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
 
-import { CustomRadio } from 'components';
+import { AnimatedDiv, CustomRadio } from 'components';
 import img from 'assets/img/steps/vaccine.png';
 
 const Vaccine = () => {
@@ -11,7 +11,7 @@ const Vaccine = () => {
   const vaccinePlanning = watch('vaccine-planning');
 
   return (
-    <>
+    <AnimatedDiv className='w-full h-auto flex justify-between'>
       <form className='w-1/2 pr-5'>
         <CustomRadio
           question='უკვე აცრილი ხარ?'
@@ -53,17 +53,19 @@ const Vaccine = () => {
           ''
         )}
         {vaccine === 'vaccine-yes' && vaccineState === 'vaccine-half-no' ? (
-          <p className='pl-16 py-5 font-bold max-w-md'>
-            რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი{' '}
-            <a
-              href='https://booking.moh.gov.ge/'
-              target='_blank'
-              rel='noreferrer'
-              className='text-[#1289AE]'
-            >
-              https://booking.moh.gov.ge/
-            </a>
-          </p>
+          <AnimatedDiv>
+            <p className='pl-16 py-5 font-bold max-w-md'>
+              რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი{' '}
+              <a
+                href='https://booking.moh.gov.ge/'
+                target='_blank'
+                rel='noreferrer'
+                className='text-[#1289AE]'
+              >
+                https://booking.moh.gov.ge/
+              </a>
+            </p>
+          </AnimatedDiv>
         ) : (
           ''
         )}
@@ -94,7 +96,7 @@ const Vaccine = () => {
         )}
         {vaccine === 'vaccine-no' &&
         vaccinePlanning === 'vaccine-covid-contact-planning' ? (
-          <div className='pl-16 py-5 font-bold max-w-md'>
+          <AnimatedDiv className='pl-16 py-5 font-bold max-w-md'>
             <p>
               ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ
               ვაქცინის გაკეთება.
@@ -110,7 +112,7 @@ const Vaccine = () => {
                 https://booking.moh.gov.ge/
               </a>
             </p>
-          </div>
+          </AnimatedDiv>
         ) : (
           ''
         )}
@@ -118,7 +120,7 @@ const Vaccine = () => {
       <div className='w-1/2 pl-5'>
         <img src={img} alt='vaccine' className='pt-3 max-h-150'></img>
       </div>
-    </>
+    </AnimatedDiv>
   );
 };
 
