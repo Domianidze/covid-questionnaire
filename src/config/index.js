@@ -1,3 +1,3 @@
-export { API_URL } from './config';
-export { QUESTIONNAIRE_STEPS } from './config';
-export { ANIMATION_TIME_SEC } from './config';
+export { API_URL } from './general-config';
+export { QUESTIONNAIRE_STEPS } from './general-config';
+export { ANIMATION_TIME_SEC } from './general-config';
