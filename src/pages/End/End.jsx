@@ -4,27 +4,89 @@ import DataContext from 'state/data-context';
 
 import { gsap, Power2 } from 'gsap/gsap-core';
 import { AnimatedDiv } from 'components';
-import { ANIMATION_TIME_SEC } from 'config';
+import { API_URL, ANIMATION_TIME_SEC } from 'config';
 
 // Sparkles
 import bigSparkleImg from 'assets/img/sparkles/big.png';
 import smallSparkleImg from 'assets/img/sparkles/small.png';
 
+const submitData = async (contextData) => {
+  try {
+    const data = {
+      first_name: contextData.firstname,
+      last_name: contextData.lastname,
+      email: contextData.email,
+      had_covid: contextData['covid-contact'].replace('covid-', ''),
+      had_antibody_test:
+        contextData.antibodies === 'antibodies-yes' ? true : false,
+      ...(contextData.antibodies === 'antibodies-yes'
+        ? {
+            antibodies: {
+              ...(contextData['antibodies-date'] && {
+                test_date: contextData['antibodies-date'],
+              }),
+              ...(contextData['antibodies-amount'] && {
+                number: +contextData['antibodies-amount'],
+              }),
+            },
+          }
+        : { covid_sickness_date: contextData['covid-date'] }),
+      ...(contextData.antibodies === 'antibodies-yes' && {
+        antibodies: {
+          ...(contextData['antibodies-date'] && {
+            test_date: contextData['antibodies-date'],
+          }),
+          ...(contextData['antibodies-amount'] && {
+            number: contextData['antibodies-amount'],
+          }),
+        },
+      }),
+      had_vaccine: contextData.vaccine === 'vaccine-yes' ? true : false,
+      ...(contextData.vaccine === 'vaccine-yes'
+        ? {
+            vaccination_stage: contextData['vaccine-state'],
+          }
+        : {
+            i_am_waiting: contextData['vaccine-planning'],
+          }),
+      non_formal_meetings: contextData['meeting-amount'],
+      number_of_days_from_office: +contextData['working-office-amount'],
+      ...(contextData['in-person-meeting'] && {
+        what_about_meetings_in_live: contextData['in-person-meeting'],
+      }),
+      ...(contextData['environment-opinion'] && {
+        tell_us_your_opinion_about_us: contextData['environment-opinion'],
+      }),
+    };
+
+    const response = await fetch(`${API_URL}/create`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      header: {
+        accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const End = () => {
-  const dataCtx = useContext(DataContext);
+  const { data: contextData } = useContext(DataContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!dataCtx.data['meeting-amount']) {
+    if (!contextData['meeting-amount']) {
       navigate('/questionnaire');
       return;
     } else {
-      console.log(dataCtx.data);
-      console.log('Submitted');
-      // localStorage.clear();
+      submitData(contextData);
+      localStorage.clear();
     }
-  }, [dataCtx, navigate]);
+  }, [contextData, navigate]);
 
   const bigSparkle = useRef();
   const smallSparkle = useRef();

@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import DataContext from 'state/data-context';
 
 import { AnimatePresence } from 'framer-motion';

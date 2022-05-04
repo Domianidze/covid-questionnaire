@@ -8,7 +8,7 @@ const TextArea = (props) => {
       }${props.required ? '*' : ''}`}</label>
       <textarea
         id={props.id}
-        name={props.id}
+        {...props.register}
         placeholder={props.placeholder}
         value={props.value}
         className='w-150 h-44 p-5 font-main text-lg text-background bg-transparent border border-background border-solid resize-none'

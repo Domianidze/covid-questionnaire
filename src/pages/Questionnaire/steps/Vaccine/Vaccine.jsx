@@ -33,12 +33,12 @@ const Vaccine = () => {
             radios={[
               {
                 label: 'პირველი დოზა და დარეგისტრირებული ვარ მეორეზე',
-                id: 'vaccine-half-yes',
+                id: 'first_dosage_and_registered_on_the_second',
               },
-              { label: 'სრულიად აცრილი ვარ', id: 'vaccine-full' },
+              { label: 'სრულიად აცრილი ვარ', id: 'fully_vaccinated' },
               {
                 label: 'პირველი დოზა და არ ვარ დარეგისტრირებული მეორეზე',
-                id: 'vaccine-half-no',
+                id: 'first_dosage_and_not_registered_yet',
               },
             ]}
             register={{
@@ -52,7 +52,8 @@ const Vaccine = () => {
         ) : (
           ''
         )}
-        {vaccine === 'vaccine-yes' && vaccineState === 'vaccine-half-no' ? (
+        {vaccine === 'vaccine-yes' &&
+        vaccineState === 'first_dosage_and_not_registered_yet' ? (
           <AnimatedDiv>
             <p className='pl-16 py-5 font-bold max-w-md'>
               რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი{' '}
@@ -75,12 +76,12 @@ const Vaccine = () => {
             radios={[
               {
                 label: 'დარეგისტრირებული ვარ და ველოდები რიცხვს',
-                id: 'vaccine-registered',
+                id: 'registered_and_waiting',
               },
-              { label: 'არ ვგეგმავ', id: 'vaccine-not-registered' },
+              { label: 'არ ვგეგმავ', id: 'not_planning' },
               {
                 label: 'გადატანილი მაქვს და ვგეგმავ აცრას',
-                id: 'vaccine-covid-contact-planning',
+                id: 'had_covid_and_planning_to_be_vaccinated',
               },
             ]}
             register={{
@@ -95,7 +96,7 @@ const Vaccine = () => {
           ''
         )}
         {vaccine === 'vaccine-no' &&
-        vaccinePlanning === 'vaccine-covid-contact-planning' ? (
+        vaccinePlanning === 'had_covid_and_planning_to_be_vaccinated' ? (
           <AnimatedDiv className='pl-16 py-5 font-bold max-w-md'>
             <p>
               ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ

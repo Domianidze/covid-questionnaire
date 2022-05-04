@@ -1,3 +1,6 @@
+// API
+export const API_URL = 'https://covid19.devtest.ge/api';
+
 // Questionnaire
 export const QUESTIONNAIRE_STEPS = [
   '/questionnaire/identification',

@@ -18,7 +18,7 @@ const Covid = () => {
           radios={[
             { label: 'კი', id: 'covid-yes' },
             { label: 'არა', id: 'covid-no' },
-            { label: 'ახლა მაქვს', id: 'covid-currently' },
+            { label: 'ახლა მაქვს', id: 'covid-have_right_now' },
           ]}
           register={{
             ...register('covid-contact', {
@@ -52,11 +52,21 @@ const Covid = () => {
               თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებით რიცხვი და
               ანტისხეულების რაოდენობა
             </p>
-            <Input
-              type='number'
-              id='antibodies-number'
-              register={{ ...register('antibodies-number') }}
-              placeholder='რიცხვი'
+            <DateInput
+              type='text'
+              id='antibodies-date'
+              register={{
+                ...register('antibodies-date', {
+                  required: 'ველი სავალდებულოა',
+                  pattern: {
+                    value:
+                      /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
+                    message: 'თქვენს მიერ შეყვანილი თარიღი არასწორია',
+                  },
+                }),
+              }}
+              placeholder='დდ/თთ/წწ'
+              error={errors['antibodies-date']?.message}
               className='ml-5'
             />
             <Input

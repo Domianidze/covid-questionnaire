@@ -29,10 +29,10 @@ const Tips = () => {
         <CustomRadio
           question='რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?'
           radios={[
-            { label: 'კვირაში ორჯერ', id: 'week-twice' },
-            { label: 'კვირაში ერთხელ', id: 'week-once' },
-            { label: 'ორ კვირაში ერთხელ', id: 'two-weeks-once' },
-            { label: 'თვეში ერთხელ', id: 'month-once' },
+            { label: 'კვირაში ორჯერ', id: 'twice_a_week' },
+            { label: 'კვირაში ერთხელ', id: 'once_a_week' },
+            { label: 'ორ კვირაში ერთხელ', id: 'once_in_a_two_weeks' },
+            { label: 'თვეში ერთხელ', id: 'once_in_a_month' },
           ]}
           register={{
             ...register('meeting-amount', {
@@ -63,10 +63,16 @@ const Tips = () => {
         <TextArea
           question='რას ფიქრობ ფიზიკურ შეკრებებზე?'
           id='in-person-meeting'
+          register={{
+            ...register('in-person-meeting'),
+          }}
         />
         <TextArea
           question='რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
           id='environment-opinion'
+          register={{
+            ...register('environment-opinion'),
+          }}
         />
         <div className='w-full flex justify-end'>
           <Button
