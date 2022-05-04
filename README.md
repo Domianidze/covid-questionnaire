@@ -13,16 +13,16 @@ A covid questionnaire for Redberry.
 
 ## Prerequisites
 
-* <img src="./readme/assets/nodejs.png" height="15px" style='padding-right: 5px'> *Node JS @16.14.2*
-* <img src="./readme/assets/npm.png" height="15px" style='padding-right: 5px'/> *npm 8.5.0*
+* <img src="./readme/assets/img/nodejs.png" height="15px" style='padding-right: 5px'> *Node JS @16.14.2*
+* <img src="./readme/assets/img/npm.png" height="15px" style='padding-right: 5px'/> *npm 8.5.0*
 
 ## Tech Stack
 
-* <img src="./readme/assets/react.png" height="15"  style='padding-right: 5px'> [React @18.0.0](https://reactjs.org) - front-end framework
-* <img src="./readme/assets/react-router.png" height="15"  style='padding-right: 5px'> [React Router @6.3.0](https://reactrouter.com/) - routing library
-* <img src="./readme/assets/react-hook-form.png" height="15"  style='padding-right: 5px'> [React Hook Form @7.30.0](https://react-hook-form.com/) - form validation library
-* <img src="./readme/assets/gsap.png" height="15"  style='padding-right: 5px'> [GSAP @3.10.4](https://greensock.com/gsap/) - animation library
-* <img src="./readme/assets/framer-motion.png" height="15"  style='padding-right: 5px'> [Framer Motion @6.3.3](https://www.framer.com/motion/) - animation library
+* <img src="./readme/assets/img/react.png" height="15"  style='padding-right: 5px'> [React @18.0.0](https://reactjs.org) - front-end framework
+* <img src="./readme/assets/img/react-router.png" height="15"  style='padding-right: 5px'> [React Router @6.3.0](https://reactrouter.com/) - routing library
+* <img src="./readme/assets/img/react-hook-form.png" height="15"  style='padding-right: 5px'> [React Hook Form @7.30.0](https://react-hook-form.com/) - form validation library
+* <img src="./readme/assets/img/gsap.png" height="15"  style='padding-right: 5px'> [GSAP @3.10.4](https://greensock.com/gsap/) - animation library
+* <img src="./readme/assets/img/framer-motion.png" height="15"  style='padding-right: 5px'> [Framer Motion @6.3.3](https://www.framer.com/motion/) - animation library
 
 ## Getting Started
 
@@ -64,6 +64,6 @@ npm install
 │   ├─── state # project state managment files 
 - .eslintrc.json # eslint config file
 - .prettierrc.js # prettier config file
-- App.jsx #react app
+- App.jsx # react app
 - package.json # dependency manager configurations
 ```
