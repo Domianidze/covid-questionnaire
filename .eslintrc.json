@@ -4,7 +4,7 @@
         "react-app/jest",
         "prettier"
       ],
-    "plugins": ["prettier"],
+    "plugins": ["prettier", "plugin:cypress/recommended"],
     "rules": {
         "prettier/prettier": "error"
     }
