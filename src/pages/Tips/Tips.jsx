@@ -12,8 +12,8 @@ const Tips = () => {
   };
 
   return (
-    <AnimatedDiv className='w-full h-auto flex justify-between'>
-      <form className='w-1/2 pr-5'>
+    <AnimatedDiv className='w-full h-5/6 flex justify-between'>
+      <form className='w-1/2 mr-24 h-full  overflow-auto'>
         <div className='max-w-xl py-5 text-xl'>
           <p>
             რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო,
@@ -74,7 +74,7 @@ const Tips = () => {
             ...register('environment-opinion'),
           }}
         />
-        <div className='w-full flex justify-end'>
+        <div className='w-150 flex justify-end'>
           <Button
             value='დასრულბა'
             onClick={submitHandler}

@@ -69,7 +69,7 @@ const Questionnaire = () => {
   }
 
   return (
-    <div className='py-5 px-5 mx-auto w-full min-h-screen flex flex-col justify-between 2xl:py-20 2xl:px-0 2xl:w-375'>
+    <div className='py-5 px-5 mx-auto w-full h-screen flex flex-col justify-between overflow-hidden 2xl:py-20 2xl:px-0 2xl:w-375'>
       {/* Header */}
       <div className='w-full flex flex-col'>
         {/* Info */}

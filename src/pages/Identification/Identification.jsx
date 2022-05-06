@@ -17,8 +17,8 @@ const Identification = () => {
   }
 
   return (
-    <AnimatedDiv className='w-full h-auto flex justify-between'>
-      <form className='w-1/2 pr-5'>
+    <AnimatedDiv className='w-full h-5/6 flex justify-between'>
+      <form className='w-1/2 mr-24 h-full overflow-auto'>
         <Input
           type='text'
           id='firstname'
