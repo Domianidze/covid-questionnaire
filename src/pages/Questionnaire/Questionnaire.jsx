@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-import DataContext from 'state/data-context';
+import DataContext from 'state/DataContext';
 
 import { QUESTIONNAIRE_STEPS } from 'config';
 

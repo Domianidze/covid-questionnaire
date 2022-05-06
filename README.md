@@ -81,11 +81,6 @@ npx cypress open
 │   ├───├─── index.js #export all configurations
 │   ├─── pages # project pages
 │   ├───├─── page-folder # page folder
-│   ├───├───├─── nested-pages # [OPTIONAL] nested pages folder
-│   ├───├───├───├─── nested-page-folder # nested page folder
-│   ├───├───├───├───├───  nested-page.jsx # nested page
-│   ├───├───├───├───├───  index.js # export default nested page
-│   ├───├───├───├─── index.jsx # export all nested pages
 │   ├───├───├─── page-name.jsx # page component
 │   ├───├───├─── index.jsx # export default page
 │   ├───├─── index.jsx # export all pages

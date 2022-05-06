@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import DataContext from 'state/data-context';
+import DataContext from 'state/DataContext';
 
 import { AnimatePresence } from 'framer-motion';
 

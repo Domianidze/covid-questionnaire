@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import { DataContextProvider } from 'state/data-context';
+import { DataContextProvider } from 'state/DataContext';
 
 import { gsap } from 'gsap/gsap-core';
 import { CSSPlugin } from 'gsap/CSSPlugin';

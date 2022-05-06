@@ -1,6 +1,6 @@
 import { useEffect, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DataContext from 'state/data-context';
+import DataContext from 'state/DataContext';
 
 import { gsap, Power2 } from 'gsap/gsap-core';
 import { AnimatedDiv } from 'components';
