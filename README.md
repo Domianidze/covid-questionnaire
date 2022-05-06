@@ -24,8 +24,8 @@ A covid questionnaire for Redberry.
 * <img src="./readme/assets/img/react.png" height="15"  style='padding-right: 5px'> [React @18.0.0](https://reactjs.org) - front-end framework
 * <img src="./readme/assets/img/react-router.png" height="15"  style='padding-right: 5px'> [React Router @6.3.0](https://reactrouter.com/) - routing library
 * <img src="./readme/assets/img/react-hook-form.png" height="15"  style='padding-right: 5px'> [React Hook Form @7.30.0](https://react-hook-form.com/) - form validation library
+* <img src="./readme/assets/img/tailwind.png" height="15"  style='padding-right: 5px'> [Tailwind @3.0.24](https://tailwindcss.com/) - css framework
 * <img src="./readme/assets/img/gsap.png" height="15"  style='padding-right: 5px'> [GSAP @3.10.4](https://greensock.com/gsap/) - animation library
-* <img src="./readme/assets/img/framer-motion.png" height="15"  style='padding-right: 5px'> [Framer Motion @6.3.3](https://www.framer.com/motion/) - animation library
 * <img src="./readme/assets/img/framer-motion.png" height="15"  style='padding-right: 5px'> [Framer Motion @6.3.3](https://www.framer.com/motion/) - animation library
 * <img src="./readme/assets/img/cypress.png" height="15"  style='padding-right: 5px'> [Cypress  @9.6.0](https://www.cypress.io/) - end-to-end testing framework
 

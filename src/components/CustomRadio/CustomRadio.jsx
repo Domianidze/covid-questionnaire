@@ -1,5 +1,3 @@
-import classes from './CustomRadio.module.css';
-
 import { AnimatedDiv } from 'components';
 
 const CustomRadio = (props) => {
@@ -16,9 +14,11 @@ const CustomRadio = (props) => {
               id={radio.id}
               {...props.register}
               value={radio.id}
-              className={classes['custom-radio']}
+              className='form-check-input h-5 w-5 text-custom-black border border-custom-black cursor-pointer appearance-none transition duration-500 focus:ring-custom-black'
             ></input>
-            <label htmlFor={radio.id}>{radio.label}</label>
+            <label htmlFor={radio.id} className='pl-3 text-lg'>
+              {radio.label}
+            </label>
           </div>
         );
       })}

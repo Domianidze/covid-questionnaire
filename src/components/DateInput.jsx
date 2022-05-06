@@ -67,7 +67,7 @@ const DateInput = (props) => {
         placeholder={props.placeholder}
         onInput={inputHandler}
         onBlur={blurHandler}
-        className='ml-5 max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background'
+        className='ml-5 max-w-lg h-12 px-5 font-main text-lg text-custom-black bg-transparent border border-solid border-custom-black outline-none'
       />
       {props.error && (
         <AnimatedDiv>

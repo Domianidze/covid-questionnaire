@@ -20,9 +20,13 @@ module.exports = {
         main: ['BPG Arial', 'arial'],
       },
       colors: {
-        background: '#232323',
+        'custom-black': '#232323',
+        background: '#EAEAEA',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    // ...
+  ],
 };

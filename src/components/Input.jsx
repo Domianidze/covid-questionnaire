@@ -20,7 +20,7 @@ const Input = (props) => {
         {...props.register}
         placeholder={props.placeholder}
         defaultValue={props.value}
-        className={`${props.className} max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background`}
+        className={`${props.className} max-w-lg h-12 px-5 font-main text-lg text-custom-black bg-transparent border border-solid border-custom-black outline-none`}
       />
       {props.error && (
         <AnimatedDiv>

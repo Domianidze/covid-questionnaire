@@ -78,7 +78,7 @@ const Questionnaire = () => {
           <p className='font-counter text-4xl'>{curStep + 1}/4</p>
         </div>
         {/* Line */}
-        <div className='my-3 w-full h-[2px] bg-background'></div>
+        <div className='my-3 w-full h-[2px] bg-custom-black'></div>
       </div>
       {/* Main */}
       <Outlet

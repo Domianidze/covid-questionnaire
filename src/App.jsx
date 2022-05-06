@@ -39,7 +39,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className='App'>
+    <div className='App font-main text-custom-black bg-background'>
       <Helmet>
         <title>Redberry - Covid Questionnaire</title>
       </Helmet>

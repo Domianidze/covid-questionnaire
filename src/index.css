@@ -1,52 +1,37 @@
-/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
 
-@font-face {
-  font-family: 'BPG Arial';
-  src: url('./assets/fonts/bpg_arial.ttf');
+  @font-face {
+    font-family: 'BPG Arial';
+    src: url('./assets/fonts/bpg_arial.ttf');
+  }
+
+  @font-face {
+    font-family: 'BPG Banner Caps';
+    src: url('./assets/fonts/bpg_banner_caps.ttf');
+  }
+
+  a, button {
+    @apply duration-500
+  }
+
+  a:hover, button:hover {
+    @apply opacity-80
+  }
 }
 
-@font-face {
-  font-family: 'BPG Banner Caps';
-  src: url('./assets/fonts/bpg_banner_caps.ttf');
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 
-/* Default Styling */
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-  border: 0;
-  outline: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: 'BPG Arial';
-  color: #232323;
-  background-color: #EAEAEA;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-a, button {
-  transition: .5s
-}
-
-a:hover, button:hover {
-  opacity: 0.8;
 }

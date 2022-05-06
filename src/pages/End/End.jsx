@@ -109,7 +109,7 @@ const End = () => {
   }, []);
 
   return (
-    <AnimatedDiv className='w-full h-screen flex justify-center items-center bg-background'>
+    <AnimatedDiv className='w-full h-screen flex justify-center items-center bg-custom-black'>
       <div className='relative'>
         <img
           src={bigSparkleImg}
