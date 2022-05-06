@@ -1,8 +1,6 @@
 import { AnimatedDiv } from 'components';
 
 const Input = (props) => {
-  const inputClasses = `${props.className} max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background'`;
-
   return (
     <div
       className={`relative ${
@@ -22,7 +20,7 @@ const Input = (props) => {
         {...props.register}
         placeholder={props.placeholder}
         defaultValue={props.value}
-        className={inputClasses}
+        className={`${props.className} max-w-lg h-12 px-5 font-main text-lg text-background bg-transparent border border-solid border-background`}
       />
       {props.error && (
         <AnimatedDiv>

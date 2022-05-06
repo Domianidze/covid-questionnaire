@@ -7,7 +7,6 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import Helmet from 'react-helmet';
 
-// Pages/Steps
 import {
   Start,
   Questionnaire,
