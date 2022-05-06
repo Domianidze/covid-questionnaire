@@ -36,7 +36,7 @@ const Tips = () => {
           ]}
           register={{
             ...register('meeting-amount', {
-              required: 'ველი სავალდებულოა',
+              required: 'შეხვედრების ველი სავალდებულოა',
             }),
           }}
           required='true'
@@ -54,7 +54,7 @@ const Tips = () => {
           ]}
           register={{
             ...register('working-office-amount', {
-              required: 'ველი სავალდებულოა',
+              required: 'ოფისიდან მუშაობის ველი სავალდებულოა',
             }),
           }}
           required='true'

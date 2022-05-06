@@ -22,7 +22,7 @@ const Covid = () => {
           ]}
           register={{
             ...register('covid-contact', {
-              required: 'ველი სავალდებულოა',
+              required: 'Covid-19ის ველი სავალდებულოა',
             }),
           }}
           required={true}
@@ -37,7 +37,7 @@ const Covid = () => {
             ]}
             register={{
               ...register('antibodies', {
-                required: 'ველი სავალდებულოა',
+                required: 'ანტისხეულების ტესტის ველი სავალდებულოა',
               }),
             }}
             required={true}
@@ -57,7 +57,7 @@ const Covid = () => {
               id='antibodies-date'
               register={{
                 ...register('antibodies-date', {
-                  required: 'ველი სავალდებულოა',
+                  required: 'ანტისხეულების ტესტის რიცხვის ველი სავალდებულოა',
                   pattern: {
                     value:
                       /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
@@ -90,7 +90,7 @@ const Covid = () => {
               id='covid-date'
               register={{
                 ...register('covid-date', {
-                  required: 'ველი სავალდებულოა',
+                  required: 'Covid19–ის რიცხვის ველი სავალდებულოა',
                   pattern: {
                     value:
                       /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,

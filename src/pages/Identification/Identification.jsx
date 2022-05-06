@@ -24,21 +24,23 @@ const Identification = () => {
           id='firstname'
           register={{
             ...register('firstname', {
-              required: 'ველი სავალდებულოა',
+              required: 'სახელის ველი სავალდებულოა',
               minLength: {
                 value: 2,
-                message: 'ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
               },
               maxLength: {
                 value: 255,
-                message: 'ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან',
+                message:
+                  'სახელის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან',
               },
               pattern: {
                 value: /^[ა-ჰa-zA-Z]+$/,
-                message: 'ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
+                message: 'სახელის სველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
               },
             }),
           }}
+          placeholder='იოსებ'
           label='სახელი'
           required={true}
           error={errors?.firstname?.message}
@@ -48,21 +50,22 @@ const Identification = () => {
           id='lastname'
           register={{
             ...register('lastname', {
-              required: 'ველი სავალდებულოა',
+              required: 'გვარის ველი სავალდებულოა',
               minLength: {
                 value: 2,
-                message: 'ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
+                message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
               },
               maxLength: {
                 value: 255,
-                message: 'ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან',
+                message: 'გვარის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან',
               },
               pattern: {
                 value: /^[ა-ჰa-zA-Z]+$/,
-                message: 'ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
+                message: 'გვარის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
               },
             }),
           }}
+          placeholder='ჯუღაშვილი'
           label='გვარი'
           required={true}
           error={errors?.lastname?.message}
@@ -72,13 +75,14 @@ const Identification = () => {
           id='email'
           register={{
             ...register('email', {
-              required: 'ველი სავალდებულოა',
+              required: 'მეილის ველი სავალდებულოა',
               validate: {
                 invalidEmail: (email) => /^\S+@\S+\.\S+$/.test(email),
                 notRedberryEmail: (email) => email.endsWith('redberry.ge'),
               },
             }),
           }}
+          placeholder='fbi@redberry.ge'
           label='მეილი'
           required={true}
           error={emailError ? emailError : errors?.email?.message}

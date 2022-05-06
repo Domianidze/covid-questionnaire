@@ -21,7 +21,7 @@ const Vaccine = () => {
           ]}
           register={{
             ...register('vaccine', {
-              required: 'ველი სავალდებულოა',
+              required: 'ვაქცინის ველი სავალდებულოა',
             }),
           }}
           required='true'
@@ -43,7 +43,7 @@ const Vaccine = () => {
             ]}
             register={{
               ...register('vaccine-state', {
-                required: 'ველი სავალდებულოა',
+                required: 'ვაქცინის ეტაპის ველი სავალდებულოა',
               }),
             }}
             required='true'
@@ -86,7 +86,7 @@ const Vaccine = () => {
             ]}
             register={{
               ...register('vaccine-planning', {
-                required: 'ველი სავალდებულოა',
+                required: 'ვაქცინის გეგმის ველი სავალდებულოა',
               }),
             }}
             required='true'
