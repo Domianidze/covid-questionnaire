@@ -14,10 +14,10 @@ describe('identification step', () => {
     it('error messages should change depending on user input', () => {
       cy.get('#firstname').type('ტ');
       cy.get(':nth-child(1) > .pb-3').click();
-      cy.get('.pr-5 > :nth-child(1) > div > .absolute').contains('ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან').should('be.visible');
+      cy.get('.mr-24 > :nth-child(1) > div > .absolute').contains('ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან').should('be.visible');
       cy.get('#firstname').clear();
       cy.get('#firstname').type('ტესტ!');
-      cy.get('.pr-5 > :nth-child(1) > div > .absolute').contains('ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს').should('be.visible');
+      cy.get('.mr-24 > :nth-child(1) > div > .absolute').contains('ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს').should('be.visible');
 
       cy.get('#lastname').type('ტ');
       cy.get(':nth-child(2) > .pb-3').click();

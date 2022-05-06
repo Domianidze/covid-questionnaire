@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AnimatedDiv } from 'components';
 
 const DateInput = (props) => {
-  const [enteredDate, setEnteredDate] = useState('');
+  const [enteredDate, setEnteredDate] = useState(props.value);
 
   const checkValue = (str, max) => {
     if (str.charAt(0) !== '0' || str === '00') {

@@ -12,7 +12,12 @@ const Covid = () => {
 
   return (
     <AnimatedDiv className='w-full h-5/6 flex justify-between'>
-      <form className='w-1/2 mr-24 h-full overflow-auto'>
+      <form
+        className='w-1/2 mr-24 h-full overflow-auto'
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <CustomRadio
           question='გაქვს გადატანილი Covid-19?'
           radios={[

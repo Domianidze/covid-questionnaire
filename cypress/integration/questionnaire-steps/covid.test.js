@@ -18,6 +18,7 @@ describe('covid step', () => {
     cy.contains('მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*').should('be.visible')
     cy.get('#covid-date').type('1232021');
     cy.contains('მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*').click();
+    cy.get('#covid-date').type('{enter}');
   })
   it('user should be able to go to next page if they fill out the form with valid data', () => {
     cy.fillInCovid();
