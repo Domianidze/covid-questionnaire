@@ -14,9 +14,9 @@ const CustomRadio = (props) => {
               id={radio.id}
               {...props.register}
               value={radio.id}
-              className='form-check-input h-5 w-5 text-custom-black border border-custom-black cursor-pointer appearance-none transition duration-500 focus:ring-custom-black'
+              className='form-radio h-5 w-5 text-custom-black border border-custom-black cursor-pointer appearance-none transition duration-500 focus:ring-custom-black'
             ></input>
-            <label htmlFor={radio.id} className='pl-3 text-lg'>
+            <label htmlFor={radio.id} className='pl-3 text-lg cursor-pointer'>
               {radio.label}
             </label>
           </div>
