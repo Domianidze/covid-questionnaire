@@ -14,6 +14,7 @@ const Covid = () => {
     <AnimatedDiv className='w-full h-5/6 flex justify-between'>
       <form
         className='w-1/2 mr-24 h-full overflow-auto'
+        dataTestId='questionnaire-form'
         onSubmit={(e) => {
           e.preventDefault();
         }}

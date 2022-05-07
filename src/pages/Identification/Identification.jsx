@@ -18,7 +18,7 @@ const Identification = () => {
 
   return (
     <AnimatedDiv className='w-full h-5/6 flex justify-between'>
-      <form className='w-1/2 mr-24 h-full overflow-auto'>
+      <form className='w-1/2 mr-24 h-full overflow-auto' dataTestId='questionnaire-form'>
         <Input
           type='text'
           id='firstname'
@@ -36,7 +36,7 @@ const Identification = () => {
               },
               pattern: {
                 value: /^[ა-ჰa-zA-Z]+$/,
-                message: 'სახელის სველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
+                message: 'სახელის ველი უნდა შეიცავდეს მხოლოდ ანბანის ასოებს',
               },
             }),
           }}

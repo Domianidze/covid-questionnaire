@@ -10,7 +10,7 @@ describe('tips step', () => {
       cy.wait(750);
     });
     it('user can not go to next page if they did not fill out the from', () => {
-      cy.get('.w-44').click();
+      cy.get('[dataTestId="submit-button"]').click();
       cy.contains('ველი სავალდებულოა').should('be.visible');    
     });
     it('user should be able to go to next step if they fill out the form with valid data', () => {

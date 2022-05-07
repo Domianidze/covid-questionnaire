@@ -3,26 +3,26 @@ Cypress.Commands.add('fillInIdentification', () => {
     cy.get('#firstname').type('ტესტ');
     cy.get('#lastname').type('ტესტ');
     cy.get('#email').type('test123@redberry.ge');
-    cy.get('.mr-24').click();
-    cy.get('button > img').click();
+    cy.get('[dataTestId="questionnaire-form"]').click();
+    cy.get('[dataTestId="next-step-btn"]').click();
 })
 
 Cypress.Commands.add('fillInCovid', () => {
-    cy.get(':nth-child(3) > label').click();
-    cy.get('.mr-24').click();
-    cy.get('button > img').click();
+    cy.get('#covid-no').click();
+    cy.get('[dataTestId="questionnaire-form"]').click();
+    cy.get('[dataTestId="next-step-btn"]').click();
 })
 
 Cypress.Commands.add('fillInVaccine', () => {
-    cy.get(':nth-child(1) > :nth-child(2) > label').click();
-    cy.get(':nth-child(2) > :nth-child(3) > label').click();
-    cy.get('.mr-24').click();
-    cy.get('button > img').click();
+    cy.get('#vaccine-yes').click();
+    cy.get('#fully_vaccinated').click();
+    cy.get('[dataTestId="questionnaire-form"]').click();
+    cy.get('[dataTestId="next-step-btn"]').click();
 })
 
 Cypress.Commands.add('fillInTips', () => {
-    cy.get(':nth-child(2) > :nth-child(4) > label').click();
-    cy.get(':nth-child(3) > :nth-child(5) > label').click();
-    cy.get('.mr-24').click();
-    cy.get('.w-44').click();
+    cy.get('#once_in_a_two_weeks').click();
+    cy.get('#3').click();
+    cy.get('[dataTestId="questionnaire-form"]').click();
+    cy.get('[dataTestId="submit-button"]').click();
 })

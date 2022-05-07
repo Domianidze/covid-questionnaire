@@ -2,6 +2,6 @@
 
 it('user can start the questionnaire', () => {
     cy.visit('/')
-    cy.get('.inline-block').click();
+    cy.get('[dataTestId="start-button"]').click();
     cy.url().should('include', 'identification');    
 })

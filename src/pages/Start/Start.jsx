@@ -38,7 +38,7 @@ const Start = (props) => {
         to={`/questionnaire/${props.lastAccessibleStep}`}
         className='mt-24 max-w-xxs font-banner text-3xl text-center overflow-hidden'
       >
-        <span className='inline-block -translate-y-full' ref={btnRef}>
+        <span className='inline-block -translate-y-full' dataTestId='start-button'  ref={btnRef}>
           კითხვარის {props.data?.firstname ? 'გაგრძელება' : 'დაწყება'}
         </span>
       </Link>

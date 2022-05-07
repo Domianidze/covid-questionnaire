@@ -6,15 +6,15 @@ describe('covid step', () => {
     cy.wait(750);
   });
   it('user can not go to next page if they did not fill out the from', () => {
-    cy.get('.opacity-50 > img').click();
+    cy.get('[dataTestId="next-step-btn"]').click();
     cy.contains('ველი სავალდებულოა').should('be.visible');    
   })
   it('different inputs should appear based on user input', () => {
-    cy.get(':nth-child(1) > :nth-child(2) > label').click();
+    cy.get('#covid-yes').click();
     cy.contains('ანტისხეულების ტესტი გაქვს გაკეთებული?').should('be.visible');
-    cy.get(':nth-child(2) > :nth-child(2) > label').click();
+    cy.get('#antibodies-yes').click();
     cy.contains('თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებით რიცხვი და ანტისხეულების რაოდენობა').should('be.visible')
-    cy.get(':nth-child(2) > :nth-child(3) > label').click();
+    cy.get('#antibodies-no').click();
     cy.contains('მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*').should('be.visible')
     cy.get('#covid-date').type('1232021');
     cy.contains('მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*').click();
