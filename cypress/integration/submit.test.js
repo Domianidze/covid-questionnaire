@@ -10,15 +10,15 @@ it('user should be able to submit data', () => {
     cy.get('#antibodies-yes').click();
     cy.get('#antibodies-date').type('1232021');
     cy.get('#antibodies-amount').type('500');  
-    cy.get('[dataTestId="questionnaire-form"]').click();
-    cy.get('[dataTestId="next-step-btn"]').click();
+    cy.get('[datatestid="questionnaire-form"]').click();
+    cy.get('[datatestid="next-step-btn"]').click();
     cy.wait(750)
     
     // Fill in Vaccine
     cy.get('#vaccine-no').click();
     cy.get('#registered_and_waiting').click(); 
-    cy.get('[dataTestId="questionnaire-form"]').click();
-    cy.get('[dataTestId="next-step-btn"]').click(); 
+    cy.get('[datatestid="questionnaire-form"]').click();
+    cy.get('[datatestid="next-step-btn"]').click(); 
     cy.wait(750)
     
     // Fill in tips and submit
@@ -26,8 +26,8 @@ it('user should be able to submit data', () => {
     cy.get('#3').click();
     cy.get('#in-person-meeting').type('ტესტ');
     cy.get('#environment-opinion').type('ტესტ');
-    cy.get('[dataTestId="questionnaire-form"]').click();
-    cy.get('[dataTestId="submit-button"]').click();
+    cy.get('[datatestid="questionnaire-form"]').click();
+    cy.get('[datatestid="submit-button"]').click();
     cy.intercept('POST', 'https://covid19.devtest.ge/api/*', {
         statusCode: 200,
     });

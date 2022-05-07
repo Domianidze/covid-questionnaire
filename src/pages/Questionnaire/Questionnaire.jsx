@@ -103,7 +103,7 @@ const Questionnaire = () => {
             </p>
             <button
               className={nextBtnClassName}
-              dataTestId='next-step-btn'
+              datatestid='next-step-btn'
               onClick={handleSubmit(saveDataHandler)}
             >
               <img src={nextIcon} alt='next icon'></img>

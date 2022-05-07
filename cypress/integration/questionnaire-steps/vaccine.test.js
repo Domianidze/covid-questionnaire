@@ -8,7 +8,7 @@ describe('vaccine step', () => {
       cy.wait(750);
     });
     it('user can not go to next page if they did not fill out the from', () => {
-      cy.get('[dataTestId="next-step-btn"]').click();
+      cy.get('[datatestid="next-step-btn"]').click();
       cy.contains('ველი სავალდებულოა').should('be.visible');    
     });
     it('different componnets should appear based on user input', () => {
