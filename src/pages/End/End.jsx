@@ -10,45 +10,50 @@ import { API_URL, ANIMATION_TIME_SEC } from 'config';
 import bigSparkleImg from 'assets/img/sparkles/big.png';
 import smallSparkleImg from 'assets/img/sparkles/small.png';
 
-const submitData = async (contextData) => {
-  try {
-    const data = {
-      first_name: contextData.firstname,
-      last_name: contextData.lastname,
-      email: contextData.email,
-      had_covid: contextData['covid-contact'].replace('covid-', ''),
-      had_antibody_test:
-        contextData.antibodies === 'antibodies-yes' ? true : false,
-      ...(contextData.antibodies === 'antibodies-yes'
-        ? {
-            antibodies: {
-              ...(contextData['antibodies-date'] && {
-                test_date: contextData['antibodies-date'],
-              }),
-              ...(contextData['antibodies-amount'] && {
-                number: +contextData['antibodies-amount'],
-              }),
-            },
-          }
-        : { covid_sickness_date: contextData['covid-date'] }),
-      ...(contextData.antibodies === 'antibodies-yes' && {
+const getAntibodiesData = (contextData) => {
+  return contextData.antibodies === 'antibodies-yes'
+    ? {
         antibodies: {
           ...(contextData['antibodies-date'] && {
             test_date: contextData['antibodies-date'],
           }),
           ...(contextData['antibodies-amount'] && {
-            number: contextData['antibodies-amount'],
+            number: +contextData['antibodies-amount'],
           }),
         },
-      }),
+      }
+    : { covid_sickness_date: contextData['covid-date'] };
+};
+
+const getVaccineData = (contextData) => {
+  return contextData.vaccine === 'vaccine-yes'
+    ? {
+        vaccination_stage: contextData['vaccine-state'],
+      }
+    : {
+        i_am_waiting: contextData['vaccine-planning'],
+      };
+};
+
+const submitData = async (contextData) => {
+  try {
+    const data = {
+      // Identification
+      first_name: contextData.firstname,
+      last_name: contextData.lastname,
+      email: contextData.email,
+
+      // Covid
+      had_covid: contextData['covid-contact'].replace('covid-', ''),
+      had_antibody_test:
+        contextData.antibodies === 'antibodies-yes' ? true : false,
+      ...getAntibodiesData(contextData),
+
+      // Vaccine
       had_vaccine: contextData.vaccine === 'vaccine-yes' ? true : false,
-      ...(contextData.vaccine === 'vaccine-yes'
-        ? {
-            vaccination_stage: contextData['vaccine-state'],
-          }
-        : {
-            i_am_waiting: contextData['vaccine-planning'],
-          }),
+      ...getVaccineData(contextData),
+
+      // Tips
       non_formal_meetings: contextData['meeting-amount'],
       number_of_days_from_office: +contextData['working-office-amount'],
       ...(contextData['in-person-meeting'] && {
