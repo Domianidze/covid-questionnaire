@@ -73,6 +73,8 @@ const submitData = async (contextData) => {
       },
     });
     console.log(response);
+
+    localStorage.removeItem('data');
   } catch (err) {
     console.error(err);
   }
@@ -89,7 +91,6 @@ const End = () => {
       return;
     } else {
       submitData(contextData);
-      localStorage.clear();
     }
   }, [contextData, navigate]);
 
