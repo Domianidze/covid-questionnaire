@@ -44,7 +44,7 @@ function App() {
         <title>Redberry - Covid Questionnaire</title>
       </Helmet>
       <AnimatePresence exitBeforeEnter>
-        <Routes key={location.pathname} location={location}>
+        <Routes location={location}>
           <Route
             path='/start'
             element={

@@ -99,7 +99,7 @@ const Questionnaire = () => {
                 curStep !== steps.length - 1 && submittingError && 'opacity-50'
               }`}
             >
-              ჯერ შეავშე {'<'}3
+              ჯერ შეავსე {'<'}3
             </p>
             <button
               className={nextBtnClassName}

@@ -4,6 +4,7 @@ describe('identification step', () => {
   beforeEach(() => {
     cy.visit('/questionnaire/identification');
   });
+
   it('user can not go to next page if they did not fill out the from', () => {
     cy.get('[datatestid="next-step-btn"]').click();
     cy.contains('ველი სავალდებულოა').should('be.visible');
@@ -11,6 +12,7 @@ describe('identification step', () => {
     // Error message should disappear after 2 seconds
     cy.wait(2000);
   });
+
   it('error messages should change depending on user input', () => {
     cy.get('#firstname').type('ტ');
     cy.get('[datatestid="questionnaire-form"]').click();
@@ -43,6 +45,7 @@ describe('identification step', () => {
       'გთხოვთ დარეგისტრირდეთ Redberry-ს მეილით (youremail@redberry.ge)'
     );
   });
+
   it('user should be able to go to next step if they fill out the form with valid data', () => {
     cy.fillInIdentification();
     cy.url().should('include', 'covid');
